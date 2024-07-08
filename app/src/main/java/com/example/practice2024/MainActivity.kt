@@ -42,25 +42,26 @@ import coil.compose.rememberAsyncImagePainter
 
 data class HeroClass(
     val name: String,
-    val logo: String,
     val avatar: String,
+    val logo: String,
     val info: String)
 
 public var HeroesPool = listOf(
     HeroClass("DeadPool",
-        "https://instalook.ru/uploads/dakimakura/dedpul-2080.jpg",
-        "https://get.wallhere.com/photo/illustration-text-logo-superhero-circle-Deadpool-brand-shape-line-symbol-font-48268.png",
-        "Я ДЭДПУЛ!!!"),
+        "https://oboi-telefon.ru/wallpapers/145260/39558.jpg",
+        "https://w0.peakpx.com/wallpaper/681/463/HD-wallpaper-deadpool-deadpool-logo.jpg",
+        "— Веселого Рождества.\n" +
+                "— И вам веселого… апрельского вторника, мистер Пул."),
 
     HeroClass("Black widow",
-        "https://b1.filmpro.ru/c/807359.700xp.jpg",
-        "https://browsecat.art/sites/default/files/black-widow-background-logo-126594-239702-8977137.png",
-        "Я черная вдова!!!"),
+        "https://809620.selcdn.ru/wallpaperio-net/wallpapers/full/3ad0ed6111216467c773c0dcf673f096.jpg",
+        "https://img.freepik.com/premium-photo/black-spider-black-background-3d-rendering-3d-illustration-generative-ai_804788-45417.jpg?w=740",
+        "Что за неистребимая любовь к дешевым мелодрамам, я это ненавижу!"),
 
     HeroClass("Loki",
-        "https://i.pinimg.com/736x/e1/0e/70/e10e70e66db9b8107a35a1b6de5411f7.jpg",
-        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7307f351052193.58e14e6617611.png",
-        "Я Локи!!!"))
+        "https://809620.selcdn.ru/wallpaperio-net/wallpapers/full/55d80ccd674af1bedf6a11e07d5b9ed6.jpg",
+        "https://w0.peakpx.com/wallpaper/51/825/HD-wallpaper-loki-intro-logo.jpg",
+        "Истории есть везде, куда ни глянь."))
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,12 +101,12 @@ class MainActivity : ComponentActivity() {
 
                         Image(
                             painter = rememberAsyncImagePainter(
-                                model = hero.logo, imageLoader = ImageLoader(
+                                model = hero.avatar, imageLoader = ImageLoader(
                                     LocalContext.current
                                 )
                             ),
 
-                            contentDescription = "logotype",
+                            contentDescription = "ava",
                             modifier = Modifier.size(700.dp), alignment = Alignment.Center
                         )
                     }
@@ -155,12 +156,12 @@ class MainActivity : ComponentActivity() {
         var isClicked by mutableStateOf(false)
         Image(
             painter = rememberAsyncImagePainter(
-                model = hero.avatar, imageLoader = ImageLoader(
+                model = hero.logo, imageLoader = ImageLoader(
                     LocalContext.current
                 )
             ),
 
-            contentDescription = "avatar",
+            contentDescription = "logo",
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize(), alignment = Alignment.Center)
 
